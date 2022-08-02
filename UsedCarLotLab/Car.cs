@@ -20,7 +20,11 @@ namespace UsedCarLotLab
 
         public override string ToString()
         {
-            return $"Make:{Make} \nModel:{Model} \nYear:{Year} \nPrice:{Price}";
+            string a = String.Format("{0,-8} {1, -15}", "Make:", $"{Make}");
+            string b = String.Format("\n{0,-8} {1, -15}", "Model:", $"{Model}");
+            string c = String.Format("\n{0,-8} {1, -15}", "Year:", $"{Year}");
+            string d = String.Format("\n{0,-8} {1, -15}", "Price:", $"${Price}");
+            return a + b + c + d;
         }
 
 
