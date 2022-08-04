@@ -17,21 +17,18 @@ cars.Add(carSix);
 
 int selectionNum = 1;
 
-foreach(Car car in cars)
-{
-    Console.WriteLine($"\nSELECTION #{selectionNum}");
-    Console.WriteLine(car.ToString());
-    selectionNum++;
-}
+CarLot.PrintAllCars(cars, selectionNum);
 
 Waypoint1:
 
 Console.WriteLine("\nPLEASE ENTER YOUR SELECTION:");
 string input = Console.ReadLine();
+
+int carIndex = 0;
 try
 {
     int selectionInt = Int32.Parse(input);
-    int carIndex = selectionInt - 1;
+     carIndex = selectionInt - 1;
     Console.Clear();
     Console.WriteLine($"YOU SELECTED CAR #{input}");
     Console.WriteLine(cars[carIndex].ToString());
@@ -42,6 +39,23 @@ catch (FormatException)
     goto Waypoint1;
 }
 
-Console.WriteLine("\nWOULD YOU LIKE TO PURCHASE THIS CAR?");
+Console.WriteLine("\nWOULD YOU LIKE TO PURCHASE THIS CAR? Y/N");
+string purchaseInput = Console.ReadLine().ToLower();
+
+if (purchaseInput == "y")
+{
+    Console.Clear();
+    Console.WriteLine("\nGreat! Enjoy your new car!");
+    CarLot.RemoveCar(cars, cars[carIndex]);
+    CarLot.PrintAllCars(cars, selectionNum);
+    goto Waypoint1;
+}
+else if (purchaseInput == "n")
+{
+    Console.Clear();
+    Console.WriteLine("Changed your mind? Here's the car list again! ");
+    CarLot.PrintAllCars(cars, selectionNum);
+    goto Waypoint1;
+}
 
 

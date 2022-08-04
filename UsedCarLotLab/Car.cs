@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace UsedCarLotLab
 {
-    public class Car
+    public class Car : CarLot
     {
         public Car(string aMake, string aModel, int aYear, decimal aPrice)
         {
