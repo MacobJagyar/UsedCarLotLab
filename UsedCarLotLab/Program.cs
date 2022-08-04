@@ -5,10 +5,15 @@ List<Car> cars = new List<Car>();
 Car carOne = new Car("Honda", "Civic", 2022, 25000.00m);
 Car carTwo = new Car("Ford", "Bronco", 2022, 40000.00m);
 Car carThree = new Car("Dodge", "TRX", 2022, 100000.00m);
-
+UsedCar carFour = new UsedCar("Dodge", "Raider", 1988, 2500.00m, 185000);
+UsedCar carFive = new UsedCar("Mazda", "Speed6", 1978, 25400.00m, 1850400);
+UsedCar carSix = new UsedCar("Tesla", "X", 2020, 25000.00m, 15000);
 cars.Add(carOne);
 cars.Add(carTwo);
 cars.Add(carThree);
+cars.Add(carFour);
+cars.Add(carFive);
+cars.Add(carSix);
 
 int selectionNum = 1;
 
