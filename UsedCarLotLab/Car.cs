@@ -20,10 +20,10 @@ namespace UsedCarLotLab
 
         public override string ToString()
         {
-            string a = String.Format("{0,-8} {1, -15}", "Make:", $"{Make}");
-            string b = String.Format("\n{0,-8} {1, -15}", "Model:", $"{Model}");
-            string c = String.Format("\n{0,-8} {1, -15}", "Year:", $"{Year}");
-            string d = String.Format("\n{0,-8} {1, -15}", "Price:", $"${Price}");
+            string a = String.Format("{0,-10} {1, -10}", "Make:", $"{Make}");
+            string b = String.Format("\n{0,-10} {1, -10}", "Model:", $"{Model}");
+            string c = String.Format("\n{0,-10} {1, -10}", "Year:", $"{Year}");
+            string d = String.Format("\n{0,-10} {1, -10}", "Price:", $"${Price}");
             return a + b + c + d;
         }
 
