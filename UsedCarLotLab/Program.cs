@@ -57,7 +57,7 @@ try
 {
     int selectionInt = Int32.Parse(input);
     carIndex = selectionInt - 1;
-    if (carIndex <= cars.Count)
+    if (carIndex > 0 && carIndex <= cars.Count)
     {
         Console.Clear();
         Console.WriteLine($"YOU SELECTED CAR #{input}");
