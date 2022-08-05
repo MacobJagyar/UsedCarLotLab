@@ -56,10 +56,19 @@ int carIndex = 0;
 try
 {
     int selectionInt = Int32.Parse(input);
-     carIndex = selectionInt - 1;
-    Console.Clear();
-    Console.WriteLine($"YOU SELECTED CAR #{input}");
-    Console.WriteLine(cars[carIndex].ToString());
+    carIndex = selectionInt - 1;
+    if (carIndex <= cars.Count)
+    {
+        Console.Clear();
+        Console.WriteLine($"YOU SELECTED CAR #{input}");
+        Console.WriteLine(cars[carIndex].ToString());
+    }
+    else
+    {
+        Console.WriteLine("INVALID INPUT!");
+        goto Waypoint1;
+            
+    }
 }
 catch (FormatException)
 {
