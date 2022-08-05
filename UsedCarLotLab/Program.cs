@@ -19,6 +19,34 @@ int selectionNum = 1;
 
 CarLot.PrintAllCars(cars, selectionNum);
 
+Console.Write("\nWould you like to PURCHASE a car or SELL us a car? ");
+string buySellChoice = Console.ReadLine().ToLower();
+
+if (buySellChoice == "purchase")
+{
+    goto Waypoint1;
+}
+else if (buySellChoice == "sell")
+{
+    UsedCar newCar = new UsedCar();
+    CarLot.AddCar(cars, newCar);
+    CarLot.PrintAllCars(cars, selectionNum);
+
+    Console.WriteLine("\nThanks! Wanna look at the lot? Y/N");
+    string lotChoice = Console.ReadLine().ToLower();
+    
+    if (lotChoice == "y")
+    {
+        CarLot.PrintAllCars(cars, selectionNum);
+        goto Waypoint1;
+    } 
+    else if (lotChoice == "n")
+    {
+        Console.WriteLine("See you later!");
+        Environment.Exit(0);
+    }
+}
+
 Waypoint1:
 
 Console.WriteLine("\nPLEASE ENTER YOUR SELECTION:");
@@ -38,6 +66,8 @@ catch (FormatException)
     Console.WriteLine("INVALID INPUT! PLEASE ENTER A NUMBER.");
     goto Waypoint1;
 }
+
+
 
 Console.WriteLine("\nWOULD YOU LIKE TO PURCHASE THIS CAR? Y/N");
 string purchaseInput = Console.ReadLine().ToLower();

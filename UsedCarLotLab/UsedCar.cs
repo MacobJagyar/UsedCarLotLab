@@ -6,12 +6,14 @@ using System.Threading.Tasks;
 
 namespace UsedCarLotLab
 {
-    public class UsedCar : Car 
+    public class UsedCar : Car
     {
 
-        public UsedCar(string _make, string _model, int _year, decimal _price, double _mileage) : 
+        public UsedCar(string _make, string _model, int _year, decimal _price, double _mileage) :
             base(_make, _model, _year, _price) { Mileage = _mileage; }
         public double Mileage { get; set; }
+
+        public UsedCar() { }
 
         public override string ToString()
         {
